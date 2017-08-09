@@ -1,0 +1,299 @@
+* Intro
+emacs实现资源管理器、加载器（win-r）、gtd。
+* User
+** DONE 如何emacs实现windows win-r功能？
+   CLOSED: [2017-08-09 Wed 09:01]
+？模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+m-& $file
+#+END_VERSE
+* Dev
+** DONE 如何linux cli使用默认软件打开文件（实现windows start命令）？
+   CLOSED: [2017-08-09 Wed 09:02]
+？模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=how+gnome+cli+set+default+application&ie=utf-8&oe=utf-8
+https://askubuntu.com/questions/15354/how-to-open-file-with-default-application-from-command-line
+xdg-open
+#+END_VERSE
+
+** DONE 如何linux cli设置gnome shell文件默认打开的软件（default application）？
+   CLOSED: [2017-08-09 Wed 09:31]
+？设置无后缀文件和目录使用emacs打开。模拟win-r的功能。快速启动程序或文件（普通文件或目录）
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=how+gnome+cli+set+default+application&ie=utf-8&oe=utf-8
+http://linuxcommando.blogspot.com/2014/03/how-to-specify-default-applications-for.html
+
+xdg-mime query default application/pdf 
+
+xdg-mime default xpdf.desktop application/pdf
+
+xdg-open somefile.pdf
+
+https://www.google.com/search?q=xdg-mime+set+no+suffix+file&ie=utf-8&oe=utf-8
+https://forum.kde.org/viewtopic.php?f=67&t=108683
+text/plain
+
+man xdg-mime
+xdg-mime query filetype /tmp/foobar.png
+Prints the MIME type of the file /tmp/foobar.png, in this case image/png
+
+xdg-mime query filetype $reg_file
+text/plain
+
+xdg-mime query filetype $dir_file
+inode-directory
+#+END_VERSE
+
+** DONE 如何linux gui shell切换cli shell？
+   CLOSED: [2017-08-09 Wed 09:36]
+？测试xdg-open打开文本文件。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=change+tty&ie=utf-8&oe=utf-8
+https://unix.stackexchange.com/questions/167386/how-to-switch-between-tty-and-xorg-session
+
+C-M-F3
+#+END_VERSE
+
+** DONE 如何python获取shell变量值？
+   CLOSED: [2017-08-09 Wed 10:29]
+？获取PATH变量，遍历所有目录。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+get+shell+variable&ie=utf-8&oe=utf-8
+https://stackoverflow.com/questions/17435056/read-bash-variables-into-a-python-script
+
+import os
+print os.environ["PATH"]
+
+https://docs.python.org/2/library/os.html
+15. Generic Operating System Services
+15.1. os — Miscellaneous operating system interfaces
+15.1.1. Process Parameters
+#+END_VERSE
+** DONE 如何python切割string为数组？
+   CLOSED: [2017-08-09 Wed 10:29]
+？切割PATH为目录数组。遍历PATH的所有目录。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+cut+string
+https://stackoverflow.com/questions/8247792/python-how-to-cut-a-string-in-python
+s.split(separator)
+
+https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange
+5. Built-in Types
+5.6.1. String Methods
+#+END_VERSE
+
+** DONE 如何python遍历目录（非递归）？
+   CLOSED: [2017-08-09 Wed 10:50]
+？遍历PATH的所有目录。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+traverse+dir&ie=utf-8&oe=utf-8
+https://stackoverflow.com/questions/4918458/how-to-traverse-through-the-files-in-a-directory
+os.listdir # 非递归
+
+https://docs.python.org/3/library/os.html#os.listdir
+https://docs.python.org/3/library/os.html#os.walk
+#+END_VERSE
+
+** DONE 如何python for遍历数组？
+   CLOSED: [2017-08-09 Wed 11:08]
+？遍历PATH的所有目录。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+3+for+loop+manual
+https://docs.python.org/3/tutorial/controlflow.html
+>>> for w in words:
+...     print(w, len(w))
+
+>>> for i in range(5):
+...     print(i)
+
+https://docs.python.org/3/reference/compound_stmts.html#the-for-statement
+
+for i in range(10):
+    print(i)
+    i = 5             # this will not affect the for-loop
+                      # because i will be overwritten with the next
+                      # index in the range
+
+
+#+END_VERSE
+
+** 如何python判断file name和字符串是否相同？
+** DONE 如何python判断变量类型？
+   CLOSED: [2017-08-09 Wed 11:44]
+？files=os.listdir(d)，判断file类型。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+check+variable+type&ie=utf-8&oe=utf-8
+https://stackoverflow.com/questions/402504/how-to-determine-a-variables-type
+Simple, for python 3.4 and above
+
+print (type(variable_name))
+
+Python 2.7 and above
+
+print type(variable_name)
+
+https://docs.python.org/3/library/functions.html
+2. Built-in Functions
+#+END_VERSE
+** DONE 如何python执行shell命令？
+   CLOSED: [2017-08-09 Wed 12:32]
+？调用linux xdg-open打开文件。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+run+shell+command&ie=utf-8&oe=utf-8
+https://stackoverflow.com/questions/89228/calling-an-external-command-in-python
+
+from subprocess import call
+call(["ls", "-l"])
+
+import subprocess 
+subprocess.call(["xdg-open", f])
+
+https://docs.python.org/3/library/index.html
+https://docs.python.org/3/library/subprocess.html
+17. Concurrent Execution
+#+END_VERSE
+
+gnome-terminal运行脚本r不会阻塞gnome-terminal，emacs调用脚本r会阻塞emacs。
+** DONE 如何python拼接字符串？
+   CLOSED: [2017-08-09 Wed 13:18]
+？转换文件相对路径为绝对路径。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+string+join&ie=utf-8&oe=utf-8
+str = "-";
+seq = ("a", "b", "c"); # 字符串序列
+print str.join( seq );
+https://docs.python.org/3/library/stdtypes.html#str.join
+
+
+https://www.google.com/search?q=python+string+append
+https://stackoverflow.com/questions/4435169/good-way-to-append-to-a-string
+s = ""
+for i in range(n):
+    s+=str(i)
+https://www.google.com/search?q=python+plus+symbol+string
+https://docs.python.org/3/library/operator.html
+10.3. operator — Standard operators as functions
+10.3.1. Mapping Operators to Functions
+
+#+END_VERSE
+
+** DONE 如何python退出脚本？
+   CLOSED: [2017-08-09 Wed 15:05]
+？异步执行脚本r，避免新建进程阻塞emacs。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+exit+script&ie=utf-8&oe=utf-8
+https://stackoverflow.com/questions/73663/terminating-a-python-script
+import sys
+sys.exit()
+
+https://docs.python.org/3/library/sys.html
+29. Python Runtime Services
+#+END_VERSE
+
+实际上没有实现需求，因为subprocess.call阻塞了脚本。
+
+** DONE 如何python subprocess异步执行shell命令？
+   CLOSED: [2017-08-09 Wed 15:12]
+？解决subprocess.call([ "xdg-open", d+"/"+f ])阻塞。模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=python+subprocess+async+call
+https://stackoverflow.com/questions/636561/how-can-i-run-an-external-command-asynchronously-from-python
+from subprocess import Popen
+p = Popen(['watch', 'ls']) # something long running
+# ... do other stuff while subprocess is running
+p.terminate()
+
+https://docs.python.org/3/library/subprocess.html
+17. Concurrent Execution
+17.5. subprocess — Subprocess management
+#+END_VERSE
+
+无法实现需求，emacs执行脚本时，执行shell命令，依然阻塞emacs。
+
+gnome-terminal运行脚本r不会阻塞gnome-terminal，emacs调用脚本r会阻塞emacs。
+** DONE 如何emacs异步执行shell command？
+   CLOSED: [2017-08-09 Wed 18:50]
+？解决m-!执行shell command阻塞emacs。模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+https://www.google.com/search?biw=1280&bih=529&q=+async+emacs+shell+command
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Single-Shell.html
+A shell command that ends in ‘&’ is executed asynchronously, and you can continue to use Emacs as it runs. You can also type M-& (async-shell-command) to execute a shell command asynchronously; this is exactly like calling M-! with a trailing ‘&’, except that you do not need the ‘&’. The default output buffer for asynchronous shell commands is named ‘*Async Shell Command*’. Emacs inserts the output into this buffer as it comes in, whether or not the buffer is visible in a window. 
+#+END_VERSE
+
+测试
+#+BEGIN_VERSE
+有效
+m-!
+gnome-control-center &
+python
+#subprocess.call(["gnome-control-center"])
+
+无效
+python
+subprocess.call(["xdg-open","gnomet"])
+#+END_VERSE
+
+所以问题在于xdg-open上。
+** DONE 如何emacs异步执行shell command xdg-open？
+   CLOSED: [2017-08-09 Wed 16:13]
+？解决异步执行xdg-open无反应问题。模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=async+emacs+xdg-open
+https://askubuntu.com/questions/646631/emacs-doesnot-work-with-xdg-open
+
+Now I use setsid -w, which supposedly makes setsid wait until the called program finishes.
+
+man setsid
+       -w, --wait
+              Wait  for  the  execution  of the program to end, and return the
+              exit value of this program as the return value of setsid.
+
+#+END_VERSE
+
+** DONE 如何linux gnome取消进程或程序分组？
+   CLOSED: [2017-08-09 Wed 18:49]
+？使用m-tab切换不同的emacs进程。
+
+#+BEGIN_VERSE
+https://www.google.com/search?biw=1280&bih=532&q=gnome+cancel+group
+https://askubuntu.com/questions/432022/disable-gnome-compiz-task-switcher-grouping
+
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+#+END_VERSE
+
+缺少引用（gsettings get）。
+** DONE 如何gsetting解决设置value时报错unknown keyword？
+   CLOSED: [2017-08-09 Wed 18:47]
+？设置gnome切换application为window。gnome取消进程分组。
+
+#+BEGIN_VERSE
+https://www.google.com/search?q=gsetting+unknown+keyword&ie=utf-8&oe=utf-8
+https://askubuntu.com/questions/487206/dconf-change-a-string-key
+The value needs additional quoting i.e. to assign GVariant string value 'foo' you need to write the value argument as "'foo'"
+
+# wrong
+gsettings set org.gnome.desktop.wm.keybindings switch-windows ['<Alt>Tab']
+
+# right
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+#+END_VERSE
+
+使用引号包围值。
