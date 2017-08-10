@@ -274,6 +274,8 @@ man setsid
 https://www.google.com/search?biw=1280&bih=532&q=gnome+cancel+group
 https://askubuntu.com/questions/432022/disable-gnome-compiz-task-switcher-grouping
 
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 #+END_VERSE

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>README</title>
+<!-- 2017-08-10 Thu 08:57 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="yjr" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">README</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Intro</a></li>
+<li><a href="#sec-2">2. User</a>
+<ul>
+<li><a href="#sec-2-1">2.1. <span class="done DONE">DONE</span> 如何emacs实现windows win-r功能？</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Dev</a>
+<ul>
+<li><a href="#sec-3-1">3.1. <span class="done DONE">DONE</span> 如何linux cli使用默认软件打开文件（实现windows start命令）？</a></li>
+<li><a href="#sec-3-2">3.2. <span class="done DONE">DONE</span> 如何linux cli设置gnome shell文件默认打开的软件（default application）？</a></li>
+<li><a href="#sec-3-3">3.3. <span class="done DONE">DONE</span> 如何linux gui shell切换cli shell？</a></li>
+<li><a href="#sec-3-4">3.4. <span class="done DONE">DONE</span> 如何python获取shell变量值？</a></li>
+<li><a href="#sec-3-5">3.5. <span class="done DONE">DONE</span> 如何python切割string为数组？</a></li>
+<li><a href="#sec-3-6">3.6. <span class="done DONE">DONE</span> 如何python遍历目录（非递归）？</a></li>
+<li><a href="#sec-3-7">3.7. <span class="done DONE">DONE</span> 如何python for遍历数组？</a></li>
+<li><a href="#sec-3-8">3.8. 如何python判断file name和字符串是否相同？</a></li>
+<li><a href="#sec-3-9">3.9. <span class="done DONE">DONE</span> 如何python判断变量类型？</a></li>
+<li><a href="#sec-3-10">3.10. <span class="done DONE">DONE</span> 如何python执行shell命令？</a></li>
+<li><a href="#sec-3-11">3.11. <span class="done DONE">DONE</span> 如何python拼接字符串？</a></li>
+<li><a href="#sec-3-12">3.12. <span class="done DONE">DONE</span> 如何python退出脚本？</a></li>
+<li><a href="#sec-3-13">3.13. <span class="done DONE">DONE</span> 如何python subprocess异步执行shell命令？</a></li>
+<li><a href="#sec-3-14">3.14. <span class="done DONE">DONE</span> 如何emacs异步执行shell command？</a></li>
+<li><a href="#sec-3-15">3.15. <span class="done DONE">DONE</span> 如何emacs异步执行shell command xdg-open？</a></li>
+<li><a href="#sec-3-16">3.16. <span class="done DONE">DONE</span> 如何linux gnome取消进程或程序分组？</a></li>
+<li><a href="#sec-3-17">3.17. <span class="done DONE">DONE</span> 如何gsetting解决设置value时报错unknown keyword？</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+emacs实现资源管理器、加载器（win-r）、gtd。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> User</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> <span class="done DONE">DONE</span> 如何emacs实现windows win-r功能？</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+？模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+m-&amp; $file<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Dev</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> <span class="done DONE">DONE</span> 如何linux cli使用默认软件打开文件（实现windows start命令）？</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+？模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=how+gnome+cli+set+default+application&ie=utf-8&oe=utf-8">https://www.google.com/search?q=how+gnome+cli+set+default+application&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://askubuntu.com/questions/15354/how-to-open-file-with-default-application-from-command-line">https://askubuntu.com/questions/15354/how-to-open-file-with-default-application-from-command-line</a><br  />
+xdg-open<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> <span class="done DONE">DONE</span> 如何linux cli设置gnome shell文件默认打开的软件（default application）？</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+？设置无后缀文件和目录使用emacs打开。模拟win-r的功能。快速启动程序或文件（普通文件或目录）
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=how+gnome+cli+set+default+application&ie=utf-8&oe=utf-8">https://www.google.com/search?q=how+gnome+cli+set+default+application&ie=utf-8&oe=utf-8</a><br  />
+<a href="http://linuxcommando.blogspot.com/2014/03/how-to-specify-default-applications-for.html">http://linuxcommando.blogspot.com/2014/03/how-to-specify-default-applications-for.html</a><br  />
+<br  />
+xdg-mime query default application/pdf<br  />
+<br  />
+xdg-mime default xpdf.desktop application/pdf<br  />
+<br  />
+xdg-open somefile.pdf<br  />
+<br  />
+<a href="https://www.google.com/search?q=xdg-mime+set+no+suffix+file&ie=utf-8&oe=utf-8">https://www.google.com/search?q=xdg-mime+set+no+suffix+file&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://forum.kde.org/viewtopic.php?f=67&t=108683">https://forum.kde.org/viewtopic.php?f=67&t=108683</a><br  />
+text/plain<br  />
+<br  />
+man xdg-mime<br  />
+xdg-mime query filetype /tmp/foobar.png<br  />
+Prints the MIME type of the file /tmp/foobar.png, in this case image/png<br  />
+<br  />
+xdg-mime query filetype $reg<sub>file</sub><br  />
+text/plain<br  />
+<br  />
+xdg-mime query filetype $dir<sub>file</sub><br  />
+inode-directory<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> <span class="done DONE">DONE</span> 如何linux gui shell切换cli shell？</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+？测试xdg-open打开文本文件。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=change+tty&ie=utf-8&oe=utf-8">https://www.google.com/search?q=change+tty&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://unix.stackexchange.com/questions/167386/how-to-switch-between-tty-and-xorg-session">https://unix.stackexchange.com/questions/167386/how-to-switch-between-tty-and-xorg-session</a><br  />
+<br  />
+C-M-F3<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> <span class="done DONE">DONE</span> 如何python获取shell变量值？</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+？获取PATH变量，遍历所有目录。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+get+shell+variable&ie=utf-8&oe=utf-8">https://www.google.com/search?q=python+get+shell+variable&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://stackoverflow.com/questions/17435056/read-bash-variables-into-a-python-script">https://stackoverflow.com/questions/17435056/read-bash-variables-into-a-python-script</a><br  />
+<br  />
+import os<br  />
+print os.environ["PATH"]<br  />
+<br  />
+<a href="https://docs.python.org/2/library/os.html">https://docs.python.org/2/library/os.html</a><br  />
+15. Generic Operating System Services<br  />
+15.1. os — Miscellaneous operating system interfaces<br  />
+15.1.1. Process Parameters<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> <span class="done DONE">DONE</span> 如何python切割string为数组？</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+？切割PATH为目录数组。遍历PATH的所有目录。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+cut+string">https://www.google.com/search?q=python+cut+string</a><br  />
+<a href="https://stackoverflow.com/questions/8247792/python-how-to-cut-a-string-in-python">https://stackoverflow.com/questions/8247792/python-how-to-cut-a-string-in-python</a><br  />
+s.split(separator)<br  />
+<br  />
+<a href="https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange">https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange</a><br  />
+5. Built-in Types<br  />
+5.6.1. String Methods<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> <span class="done DONE">DONE</span> 如何python遍历目录（非递归）？</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+？遍历PATH的所有目录。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+traverse+dir&ie=utf-8&oe=utf-8">https://www.google.com/search?q=python+traverse+dir&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://stackoverflow.com/questions/4918458/how-to-traverse-through-the-files-in-a-directory">https://stackoverflow.com/questions/4918458/how-to-traverse-through-the-files-in-a-directory</a><br  />
+os.listdir # 非递归<br  />
+<br  />
+<a href="https://docs.python.org/3/library/os.html#os.listdir">https://docs.python.org/3/library/os.html#os.listdir</a><br  />
+<a href="https://docs.python.org/3/library/os.html#os.walk">https://docs.python.org/3/library/os.html#os.walk</a><br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> <span class="done DONE">DONE</span> 如何python for遍历数组？</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+？遍历PATH的所有目录。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+3+for+loop+manual">https://www.google.com/search?q=python+3+for+loop+manual</a><br  />
+<a href="https://docs.python.org/3/tutorial/controlflow.html">https://docs.python.org/3/tutorial/controlflow.html</a><br  />
+&gt;&gt;&gt; for w in words:<br  />
+&#x2026;     print(w, len(w))<br  />
+<br  />
+&gt;&gt;&gt; for i in range(5):<br  />
+&#x2026;     print(i)<br  />
+<br  />
+<a href="https://docs.python.org/3/reference/compound_stmts.html#the-for-statement">https://docs.python.org/3/reference/compound_stmts.html#the-for-statement</a><br  />
+<br  />
+for i in range(10):<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;print(i)<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;i = 5             # this will not affect the for-loop<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# because i will be overwritten with the next<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# index in the range<br  />
+<br  />
+<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> 如何python判断file name和字符串是否相同？</h3>
+</div>
+<div id="outline-container-sec-3-9" class="outline-3">
+<h3 id="sec-3-9"><span class="section-number-3">3.9</span> <span class="done DONE">DONE</span> 如何python判断变量类型？</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+？files=os.listdir(d)，判断file类型。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+check+variable+type&ie=utf-8&oe=utf-8">https://www.google.com/search?q=python+check+variable+type&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://stackoverflow.com/questions/402504/how-to-determine-a-variables-type">https://stackoverflow.com/questions/402504/how-to-determine-a-variables-type</a><br  />
+Simple, for python 3.4 and above<br  />
+<br  />
+print (type(variable<sub>name</sub>))<br  />
+<br  />
+Python 2.7 and above<br  />
+<br  />
+print type(variable<sub>name</sub>)<br  />
+<br  />
+<a href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a><br  />
+2. Built-in Functions<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-10" class="outline-3">
+<h3 id="sec-3-10"><span class="section-number-3">3.10</span> <span class="done DONE">DONE</span> 如何python执行shell命令？</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+？调用linux xdg-open打开文件。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+run+shell+command&ie=utf-8&oe=utf-8">https://www.google.com/search?q=python+run+shell+command&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://stackoverflow.com/questions/89228/calling-an-external-command-in-python">https://stackoverflow.com/questions/89228/calling-an-external-command-in-python</a><br  />
+<br  />
+from subprocess import call<br  />
+call(["ls", "-l"])<br  />
+<br  />
+import subprocess<br  />
+subprocess.call(["xdg-open", f])<br  />
+<br  />
+<a href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a><br  />
+<a href="https://docs.python.org/3/library/subprocess.html">https://docs.python.org/3/library/subprocess.html</a><br  />
+17. Concurrent Execution<br  />
+</p>
+
+<p>
+gnome-terminal运行脚本r不会阻塞gnome-terminal，emacs调用脚本r会阻塞emacs。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-11" class="outline-3">
+<h3 id="sec-3-11"><span class="section-number-3">3.11</span> <span class="done DONE">DONE</span> 如何python拼接字符串？</h3>
+<div class="outline-text-3" id="text-3-11">
+<p>
+？转换文件相对路径为绝对路径。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+string+join&ie=utf-8&oe=utf-8">https://www.google.com/search?q=python+string+join&ie=utf-8&oe=utf-8</a><br  />
+str = "-";<br  />
+seq = ("a", "b", "c"); # 字符串序列<br  />
+print str.join( seq );<br  />
+<a href="https://docs.python.org/3/library/stdtypes.html#str.join">https://docs.python.org/3/library/stdtypes.html#str.join</a><br  />
+<br  />
+<br  />
+<a href="https://www.google.com/search?q=python+string+append">https://www.google.com/search?q=python+string+append</a><br  />
+<a href="https://stackoverflow.com/questions/4435169/good-way-to-append-to-a-string">https://stackoverflow.com/questions/4435169/good-way-to-append-to-a-string</a><br  />
+s = ""<br  />
+for i in range(n):<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;s+=str(i)<br  />
+<a href="https://www.google.com/search?q=python+plus+symbol+string">https://www.google.com/search?q=python+plus+symbol+string</a><br  />
+<a href="https://docs.python.org/3/library/operator.html">https://docs.python.org/3/library/operator.html</a><br  />
+10.3. operator — Standard operators as functions<br  />
+10.3.1. Mapping Operators to Functions<br  />
+<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-12" class="outline-3">
+<h3 id="sec-3-12"><span class="section-number-3">3.12</span> <span class="done DONE">DONE</span> 如何python退出脚本？</h3>
+<div class="outline-text-3" id="text-3-12">
+<p>
+？异步执行脚本r，避免新建进程阻塞emacs。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+exit+script&ie=utf-8&oe=utf-8">https://www.google.com/search?q=python+exit+script&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://stackoverflow.com/questions/73663/terminating-a-python-script">https://stackoverflow.com/questions/73663/terminating-a-python-script</a><br  />
+import sys<br  />
+sys.exit()<br  />
+<br  />
+<a href="https://docs.python.org/3/library/sys.html">https://docs.python.org/3/library/sys.html</a><br  />
+29. Python Runtime Services<br  />
+</p>
+
+<p>
+实际上没有实现需求，因为subprocess.call阻塞了脚本。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-13" class="outline-3">
+<h3 id="sec-3-13"><span class="section-number-3">3.13</span> <span class="done DONE">DONE</span> 如何python subprocess异步执行shell命令？</h3>
+<div class="outline-text-3" id="text-3-13">
+<p>
+？解决subprocess.call([ "xdg-open", d+"/"+f ])阻塞。模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=python+subprocess+async+call">https://www.google.com/search?q=python+subprocess+async+call</a><br  />
+<a href="https://stackoverflow.com/questions/636561/how-can-i-run-an-external-command-asynchronously-from-python">https://stackoverflow.com/questions/636561/how-can-i-run-an-external-command-asynchronously-from-python</a><br  />
+from subprocess import Popen<br  />
+p = Popen(['watch', 'ls']) # something long running<br  />
+# &#x2026; do other stuff while subprocess is running<br  />
+p.terminate()<br  />
+<br  />
+<a href="https://docs.python.org/3/library/subprocess.html">https://docs.python.org/3/library/subprocess.html</a><br  />
+17. Concurrent Execution<br  />
+17.5. subprocess — Subprocess management<br  />
+</p>
+
+<p>
+无法实现需求，emacs执行脚本时，执行shell命令，依然阻塞emacs。
+</p>
+
+<p>
+gnome-terminal运行脚本r不会阻塞gnome-terminal，emacs调用脚本r会阻塞emacs。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-14" class="outline-3">
+<h3 id="sec-3-14"><span class="section-number-3">3.14</span> <span class="done DONE">DONE</span> 如何emacs异步执行shell command？</h3>
+<div class="outline-text-3" id="text-3-14">
+<p>
+？解决m-!执行shell command阻塞emacs。模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?biw=1280&bih=529&q=+async+emacs+shell+command">https://www.google.com/search?biw=1280&bih=529&q=+async+emacs+shell+command</a><br  />
+<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Single-Shell.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Single-Shell.html</a><br  />
+A shell command that ends in ‘&amp;’ is executed asynchronously, and you can continue to use Emacs as it runs. You can also type M-&amp; (async-shell-command) to execute a shell command asynchronously; this is exactly like calling M-! with a trailing ‘&amp;’, except that you do not need the ‘&amp;’. The default output buffer for asynchronous shell commands is named ‘*Async Shell Command*’. Emacs inserts the output into this buffer as it comes in, whether or not the buffer is visible in a window.<br  />
+</p>
+
+<p>
+测试
+</p>
+<p class="verse">
+有效<br  />
+m-!<br  />
+gnome-control-center &amp;<br  />
+python<br  />
+#subprocess.call(["gnome-control-center"])<br  />
+<br  />
+无效<br  />
+python<br  />
+subprocess.call(["xdg-open","gnomet"])<br  />
+</p>
+
+<p>
+所以问题在于xdg-open上。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-15" class="outline-3">
+<h3 id="sec-3-15"><span class="section-number-3">3.15</span> <span class="done DONE">DONE</span> 如何emacs异步执行shell command xdg-open？</h3>
+<div class="outline-text-3" id="text-3-15">
+<p>
+？解决异步执行xdg-open无反应问题。模拟win-r的功能。快速启动程序或文件（普通文件或目录）。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=async+emacs+xdg-open">https://www.google.com/search?q=async+emacs+xdg-open</a><br  />
+<a href="https://askubuntu.com/questions/646631/emacs-doesnot-work-with-xdg-open">https://askubuntu.com/questions/646631/emacs-doesnot-work-with-xdg-open</a><br  />
+<br  />
+Now I use setsid -w, which supposedly makes setsid wait until the called program finishes.<br  />
+<br  />
+man setsid<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;-w, &#x2013;wait<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;Wait  for  the  execution  of the program to end, and return the<br  />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;exit value of this program as the return value of setsid.<br  />
+<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-16" class="outline-3">
+<h3 id="sec-3-16"><span class="section-number-3">3.16</span> <span class="done DONE">DONE</span> 如何linux gnome取消进程或程序分组？</h3>
+<div class="outline-text-3" id="text-3-16">
+<p>
+？使用m-tab切换不同的emacs进程。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?biw=1280&bih=532&q=gnome+cancel+group">https://www.google.com/search?biw=1280&bih=532&q=gnome+cancel+group</a><br  />
+<a href="https://askubuntu.com/questions/432022/disable-gnome-compiz-task-switcher-grouping">https://askubuntu.com/questions/432022/disable-gnome-compiz-task-switcher-grouping</a><br  />
+<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['&lt;Super&gt;Tab']"<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['&lt;Shift&gt;&lt;Super&gt;Tab']"<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['&lt;Alt&gt;Tab']"<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['&lt;Shift&gt;&lt;Alt&gt;Tab']"<br  />
+</p>
+
+<p>
+缺少引用（gsettings get）。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-17" class="outline-3">
+<h3 id="sec-3-17"><span class="section-number-3">3.17</span> <span class="done DONE">DONE</span> 如何gsetting解决设置value时报错unknown keyword？</h3>
+<div class="outline-text-3" id="text-3-17">
+<p>
+？设置gnome切换application为window。gnome取消进程分组。
+</p>
+
+<p class="verse">
+<a href="https://www.google.com/search?q=gsetting+unknown+keyword&ie=utf-8&oe=utf-8">https://www.google.com/search?q=gsetting+unknown+keyword&ie=utf-8&oe=utf-8</a><br  />
+<a href="https://askubuntu.com/questions/487206/dconf-change-a-string-key">https://askubuntu.com/questions/487206/dconf-change-a-string-key</a><br  />
+The value needs additional quoting i.e. to assign GVariant string value 'foo' you need to write the value argument as "'foo'"<br  />
+<br  />
+# wrong<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-windows ['&lt;Alt&gt;Tab']<br  />
+<br  />
+# right<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['&lt;Alt&gt;Tab']"<br  />
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['&lt;Shift&gt;&lt;Alt&gt;Tab']"<br  />
+</p>
+
+<p>
+使用引号包围值。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: yjr</p>
+<p class="date">Created: 2017-08-10 Thu 08:57</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
